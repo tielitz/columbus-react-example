@@ -20,7 +20,9 @@ var AdvancedHelloWorld = React.createClass({
   shouldGreet: function shouldGreet(param3) {
     return this.props.greeting;
   },
-
+  componentWillMount: function componentWillMount() {
+    console.log('componentWillMount');
+  },
   render: function render() {
     return (
         <div style="color: #000;font-weight:bold;">
