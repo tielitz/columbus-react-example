@@ -1,5 +1,5 @@
 import React from 'react';
-import SecondComponent from 'second-component.js';
+import SecondComponent from 'second-component';
 
 var HelloWorld = React.createClass({
   displayName: 'HelloWorld',
