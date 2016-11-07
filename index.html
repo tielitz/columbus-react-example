@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script data-require="react@0.12.2" data-semver="0.12.2" src="//cdnjs.cloudflare.com/ajax/libs/react/0.12.2/react.js"></script>
+    <script data-require="react-jsx@*" data-semver="0.12.2" src="//cdnjs.cloudflare.com/ajax/libs/react/0.12.2/JSXTransformer.js"></script>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script src="components/hello-world/hello-world.js"></script>
+    <script>
+      React.render(
+        <HelloWorld name="Foo" />,
+        document.getElementById('app')
+      );
+    </script>
+  </body>
+</html>
