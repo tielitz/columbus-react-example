@@ -1,19 +1,41 @@
 import React from 'react';
-import Child from 'child';
+import SecondComponent from 'second-component.js';
 
 var HelloWorld = React.createClass({
+  displayName: 'HelloWorld',
   propTypes: {
-    asdf: React.PropTypes.string
+    greeting: React.PropTypes.bool,
+    name: React.PropTypes.string
   },
-  sayGreeting: function () {
+  getDefaultProps: function getDefaultProps() {
+    return {
+      greeting: true,
+      name: 'Dummy'
+    };
+  },
+  sayHello: function sayHello(param1, param2) {
     return 'Hello';
   },
-  render: function() {
+  greet: function greet(){
+    alert('Greetings');
+  },
+  shouldGreet: function shouldGreet(param3) {
+    return this.props.greeting;
+  },
+  componentWillMount: function componentWillMount() {
+    console.log('componentWillMount');
+  },
+  render: function render() {
     return (
-        <div>
-          {this.sayGreeting()}, {this.props.asdf}!
-          <HelloWorld><Child /></HelloWorld>
+      <div>
+        <div id="header" onClick={this.greet()}>
+          <img src="https://pbs.twimg.com/profile_images/762369348300251136/5Obhonwa.jpg" alt="" />
         </div>
-      );
+        <div id="body">
+          <p>{this.shouldGreet() ? this.sayHello('param1', 2) : ''} <i>{this.props.name}</i>!</p>
+        </div>
+        <SecondComponent name="Bar" />
+      </div>
+    );
   }
 });
