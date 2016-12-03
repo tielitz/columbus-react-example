@@ -1,3 +1,4 @@
+'use strict';
 import React from 'react';
 import SecondComponent from '../second-component/second-component';
 
@@ -5,7 +6,7 @@ var HelloReact = React.createClass({
   displayName: 'HelloReact',
   propTypes: {
     greeting: React.PropTypes.bool,
-    name: React.PropTypes.string
+    name:     React.PropTypes.string
   },
   getDefaultProps: function getDefaultProps() {
     return {
@@ -14,7 +15,11 @@ var HelloReact = React.createClass({
     };
   },
   sayHello: function sayHello(param1, param2) {
-    return 'Hello';
+    let output = param1;
+    for (let i = 1; i < param2; i++) {
+      output += ' '+param1;
+    }
+    return output;
   },
   greet: function greet(){
     alert('Greetings');
@@ -27,14 +32,14 @@ var HelloReact = React.createClass({
   },
   render: function render() {
     return (
-      <div>
-        <div id="header" onClick={this.greet()}>
-          <img src="https://pbs.twimg.com/profile_images/762369348300251136/5Obhonwa.jpg" alt="" />
+      <div id="container">
+        <div id="header" onClick={this.greet}>
+          <img src="https://s3.amazonaws.com/media-p.slid.es/uploads/jhabdas/images/969312/react-logo-1000-transparent.png" />
         </div>
         <div id="body">
-          <p>{this.shouldGreet() ? this.sayHello('param1', 2) : ''} <i>{this.props.name}</i>!</p>
+          <p>{this.shouldGreet() ? this.sayHello('Hello', 2) : ''} <i>{this.props.name}</i>!</p>
         </div>
-        <SecondComponent name="Bar" />
+        <SecondComponent name="JSX" />
       </div>
     );
   }

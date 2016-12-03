@@ -3,15 +3,25 @@
   <head>
     <script data-require="react@0.12.2" data-semver="0.12.2" src="//cdnjs.cloudflare.com/ajax/libs/react/0.12.2/react.js"></script>
     <script data-require="react-jsx@*" data-semver="0.12.2" src="//cdnjs.cloudflare.com/ajax/libs/react/0.12.2/JSXTransformer.js"></script>
+    <style>
+      #container {
+        width: 150px;
+        border: 1px solid #ccc;
+        padding: 5px;
+      }
+      #header {
+        text-align: center;
+      }
+      img {
+        width: 100%;
+      }
+    </style>
   </head>
   <body>
     <div id="app"></div>
-    <script src="components/hello-react/hello-react.js"></script>
-    <script>
-      React.render(
-        <HelloReact name="Foo" />,
-        document.getElementById('app')
-      );
-    </script>
+
+    <script type="text/jsx" src="components/hello-react/hello-react.jsx"></script>
+    <script type="text/jsx" src="components/second-component/second-component.jsx"></script>
+    <script type="text/jsx" src="app.jsx"></script>
   </body>
 </html>
